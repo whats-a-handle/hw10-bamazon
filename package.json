@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/whats-a-handle/hw10-bamazon#readme",
   "dependencies": {
+    "inquirer": "^5.1.0",
     "mysql": "^2.15.0"
   }
 }

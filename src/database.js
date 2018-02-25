@@ -35,15 +35,28 @@ createDatabase = () =>{
 					console.log('ERROR on query: ' + error);
 				}
 				else{
-					console.log('SUCCESS');
 					
-					operation(result);
-					
+					operation(result);	
 				}
 			});
 
 		},
-		
+		checkIdExists : function(productId){
+			const Database = this;
+			const queryString = 'Select item_id FROM products WHERE item_id = ' + productId;
+			Database.query(queryString, (result)=>{
+				if(result[0].item_id){
+					console.log('Exists');
+				}
+				else{
+					console.log('Does not exist');
+				}
+
+				
+
+			});
+
+		},
 		createProduct : function(product,department, price, quantity){
 			const Database = this;
 
@@ -77,17 +90,18 @@ createDatabase = () =>{
 						if(result.affectedRows === 1){
 							console.log('You have successfully placed an order for ' + inventoryQueryResults.product_name + ' x ' +  quantity);
 							console.log(`The total cost is: $` + (inventoryQueryResults.price * quantity));
-							Database.connection.destroy();
+							
 						}
 						else{
 							console.log('Something bad happened when placing your order');
-							Database.connection.destroy();
+							
 						}
+						
 					})
 				}
 				else if(inventoryQueryResults.stock_quantity < quantity){
 					console.log(`There are only ${inventoryQueryResults.stock_quantity} remaining. You must order fewer items`);
-					//Database.connection.destroy();
+					
 				}
 			});
 			
