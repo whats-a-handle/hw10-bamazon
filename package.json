@@ -1,0 +1,22 @@
+{
+  "name": "hw10-bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whats-a-handle/hw10-bamazon.git"
+  },
+  "author": "whats-a-handle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whats-a-handle/hw10-bamazon/issues"
+  },
+  "homepage": "https://github.com/whats-a-handle/hw10-bamazon#readme",
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
+}
